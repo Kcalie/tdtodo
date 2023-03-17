@@ -28,14 +28,14 @@ function App() {
         setTodos(tmpTodos)
     }
  const toggleTodo = (index) => {
-        const tmpTodos = [...todos];
+        const tmpTodos = [...todos];/*...todos fait une copie d'un tableau*/ 
         tmpTodos[index].done = !tmpTodos[index].done;
         setTodos(tmpTodos)
     }
 
     return (
         <>
-            <Header></Header>
+            <Header todos={todos}></Header>
             <main>
                 <Form addTodo={addTodo}></Form>
                 <List todos={todos} deleteTodo={deleteTodo} toggleTodo={toggleTodo}></List>
